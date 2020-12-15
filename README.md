@@ -1,4 +1,4 @@
-# plant_disease_classify
+# Classifying Crop Diseases
 
 Project By: Sachit Nagpal (Net ID: sn2811)
 
