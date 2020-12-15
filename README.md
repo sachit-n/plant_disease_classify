@@ -2,9 +2,7 @@
 
 Project By: Sachit Nagpal (Net ID: sn2811)
 
-Submission Documents: This README, along with [this](https://colab.research.google.com/drive/1jn06snZBrHpb07EQFON3Dx3hzQfXbjjg?usp=sharing) notebook contains the submission.
-
-Please note that final model evaluation results are yet to be added. Please check back later for it as the evaluation scripts are still running since deep neural networks are slow when predicting on large datasets. 
+Submission Documents: This README, along with [this](https://colab.research.google.com/drive/1jn06snZBrHpb07EQFON3Dx3hzQfXbjjg?usp=sharing) notebook contains the submission. 
 
 ## Project Purpose
 The goal of the project is to use computer vision to accurately diagnose plant diseases from images that are clicked by farmers.
