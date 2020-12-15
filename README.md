@@ -36,7 +36,7 @@ For more specific details, can follow the [notebook](https://colab.research.goog
 
 
 ## Citing Prior Initial Work
-In this project, I utilized some sections from my own prior work. In it, I had applied transfer learning in the same manner as here, but with VGG16 network pretrained on ImageNet dataset. The resulting accuracy was higher (~65% on PlantDoc). The code of my previous work is below:
+In this project, I utilized some sections from my own prior work. In it, I had applied transfer learning in the same manner as here, but with VGG16 network pretrained on ImageNet dataset. The resulting accuracy was higher (~65% on PlantDoc) seemingly because of using VGG16 and pretraining on ImageNet. Model 1 and model 2 were also fed higher resolution images (100x100 instead of 64x64) which could be a reason. The code of my previous work is below:
 
 - [Notebook 1](https://colab.research.google.com/drive/1oZXhQ0Hb7GdWOSW3NURywuevBNyAY-Yd?usp=sharing) 
 - [Notebook 2](https://colab.research.google.com/drive/1I_uCu340A-RVZJwIn2rleWFjVinG6Yyq?usp=sharing)
