@@ -1,8 +1,11 @@
 # Classifying Crop Diseases
 
-Project By: Sachit Nagpal (Net ID: sn2811)
+Project By: 
+Sachit Nagpal, Net ID - sn2811
 
-Submission Documents: This README, along with [this](https://colab.research.google.com/drive/1jn06snZBrHpb07EQFON3Dx3hzQfXbjjg?usp=sharing) notebook contains the submission. 
+
+Submission Documents: 
+This README, along with [this](https://colab.research.google.com/drive/1jn06snZBrHpb07EQFON3Dx3hzQfXbjjg?usp=sharing) notebook contains the submission. 
 
 ## Project Purpose
 The goal of the project is to use computer vision to accurately diagnose plant diseases from images that are clicked by farmers.
@@ -23,7 +26,7 @@ Its accuracy on PlantDoc dataset is 11%. Even the authors of the PlantDoc datase
 ### Model 2
 The second model is trained on Cropped PlantDoc (C-PD) dataset (contains cropped leaves from images in PlantDoc datatset where cropping is done by creating rectangular shaped bounding boxes). 
 
-Here, I apply transfer learning by initializing the weights from Model 1. It has an accuracy of 30% on the test set. On PlantDoc dataset, it has an accuracy of 18%. In the PlantDoc paper, it was shown that accuracy of ~70% is achievable with certain pretrained architectures on C-PD. I implemented a smaller network with no pretraining and achieve 30% accuracy on C-PD.
+Here, I apply transfer learning by initializing the weights from Model 1. It has an accuracy of 30% on the test set. On PlantDoc dataset (uncropped), it has an accuracy of 18%. In the PlantDoc [paper](https://arxiv.org/abs/1911.10317), it was shown that accuracy of ~70% is achievable with certain pretrained architectures on C-PD with similar transfer learning. I implemented a smaller network with no pretraining and achieve 30% accuracy on C-PD here.
 
 ### Model 3
 After training model 1 on PlantVillage, model 2 on cropped PlantDoc (C-PD), I train Model 3 on PlantDoc dataset (uncropped). All images in C-PD training set were cropped from images in PlantDoc training set to prevent data leakage.
