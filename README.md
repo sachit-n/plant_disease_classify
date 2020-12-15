@@ -36,13 +36,13 @@ For more specific details, can follow the [notebook](https://colab.research.goog
 
 
 ## Citing Prior Initial Work
-In this project, I utilized some sections from my own prior work. In it, I had applied transfer learning in the same manner as here, but with a more powerful VGG16 network pretrained on ImageNet dataset. The resulting accuracy was higher (~65% on PlantDoc). The code of my previous work is below:
+In this project, I utilized some sections from my own prior work. In it, I had applied transfer learning in the same manner as here, but with VGG16 network pretrained on ImageNet dataset. The resulting accuracy was higher (~65% on PlantDoc). The code of my previous work is below:
 
 - [Notebook 1](https://colab.research.google.com/drive/1oZXhQ0Hb7GdWOSW3NURywuevBNyAY-Yd?usp=sharing) 
 - [Notebook 2](https://colab.research.google.com/drive/1I_uCu340A-RVZJwIn2rleWFjVinG6Yyq?usp=sharing)
 
 The key additions from my prior work in this project can be summarized below - 
 
-- I used a different CNN architecture. I stacked conv, max pool, and dense layers instead of using pretrained VGG16
+- I used a different CNN architecture. I stacked convolutional, max pool, and dense layers instead of using pretrained VGG16
 - Model 3 here does not just take a larger sized image as input to implement the Sliding Window algorithm. It instead takes two larger sized images (one 256x256, and one 520x520) and concatenates the outputs of model 2 on both images before giving final prediction. The idea was to capture more cropped regions of different sizes this way. 
    
