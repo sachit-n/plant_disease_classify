@@ -1,11 +1,12 @@
 # Classifying Crop Diseases
 
-Project By: 
-Sachit Nagpal, Net ID - sn2811
+Project Members: 
+- Sachit Nagpal, Net ID - sn2811
 
 
 Submission Documents: 
-This README, along with [this](https://colab.research.google.com/drive/1jn06snZBrHpb07EQFON3Dx3hzQfXbjjg?usp=sharing) notebook contains the submission. 
+- This README contains the summary of the project executed. 
+- The documentated code [here](https://colab.research.google.com/drive/1jn06snZBrHpb07EQFON3Dx3hzQfXbjjg?usp=sharing) may be referred too for specific details on implementation and/or reproducing results. 
 
 ## Project Purpose
 The goal of the project is to use computer vision to accurately diagnose plant diseases from images that are clicked by farmers.
