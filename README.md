@@ -21,15 +21,15 @@ The first model is trained on PlantVillage dataset.
 It has an accuracy of 94% on the test set. 
 This is similar to results in the [original paper](https://arxiv.org/abs/1604.03169) 
 that introduced the dataset without pretraining. 
-This model does not generalize to the PlantDoc dataset due to the synthetic nature of the dataset. 
+This model does not generalize to the PlantDoc dataset due to the synthetic nature of the PlantVillage dataset. 
 Its accuracy on PlantDoc dataset is 11%. Even the authors of the PlantDoc dataset noted in their [paper](https://arxiv.org/abs/1911.10317) an accuracy of ~15%, when they trained a model on PlantVillage and tested on PlantDoc dataset. In it, they had pretrained on the ImageNet too which I did not do.  
 ### Model 2
-The second model is trained on Cropped PlantDoc (C-PD) dataset (contains cropped leaves from images in PlantDoc datatset where cropping is done by creating rectangular shaped bounding boxes). 
+The second model is trained on Cropped PlantDoc (C-PD) dataset (contains cropped leaves from images in PlantDoc datatset where cropping is done by creating rectangular shaped bounding boxes as described in the PlantDoc paper). 
 
 Here, I apply transfer learning by initializing the weights from Model 1. It has an accuracy of 30% on the test set. On PlantDoc dataset (uncropped), it has an accuracy of 18%. In the PlantDoc [paper](https://arxiv.org/abs/1911.10317), it was shown that accuracy of ~70% is achievable with certain pretrained architectures on C-PD with similar transfer learning. I implemented a smaller network with no pretraining and achieve 30% accuracy on C-PD here.
 
 ### Model 3
-After training model 1 on PlantVillage, model 2 on cropped PlantDoc (C-PD), I train Model 3 on PlantDoc dataset (uncropped). All images in C-PD training set were cropped from images in PlantDoc training set to prevent data leakage.
+After training model 1 on PlantVillage, model 2 on cropped PlantDoc (C-PD), I train Model 3 on PlantDoc dataset (uncropped). All images in C-PD training set were cropped from images in PlantDoc training set only to prevent data leakage. Hence, the test sets of PlantDoc and C-PD remain unseen by the model.
 In model 3, I apply transfer learning again, but feed larger sized input image to the model. Thus, I implement the sliding window algorithm commonly used for Object Detection. Instead of detecting object locations though, I use the output for classification. By feeding a larger sized image, I get Model 2's predictions on smaller crops within the image. I add a dense hidden layer at the end, followed by the output layer. These last two dense layers make a prediction for the entire image, using the predictions of model 2 on smaller cropped regions within the image. The idea is that Model 2 is expected to perform better in some of the cropped regions, instead of the entire image. Finally though, a prediction is needed for the entire image. Hence, I add two dense layers at the end whose goal is to learn how to classify the image based on Model 2's predictions.
 
 For more specific details, can follow the [notebook](https://colab.research.google.com/drive/1jn06snZBrHpb07EQFON3Dx3hzQfXbjjg?usp=sharing).
